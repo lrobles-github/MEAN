@@ -8,12 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   colors = colorArray;
+  number = Math.floor(Math.random()*12);
 }
 
 
 var colorArray = [];
 
-for (let index = 0; index < 30; index++) {
+for (let index = 0; index < 12; index++) {
   colorArray[index] = getColor();
   console.log(colorArray[index]);
 }
