@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="/new_message" method="post">
+    <h2>Enter your message:</h2><input type="text" name="message_content" id="message">
+    <input type="submit" value="Post!">   
+</form>
+
+<% for (var m in allMessages) { %>
+    <br><br>
+    <h2><%= allMessages[m].message_content %></h2>
+    <form action="/new_comment/<%= allMessages[m]._id %>" method="post">
+        Enter your comment: <input type="text" name="comment_content" id="message">
+        <input type="submit" value="Post!">   
+    </form> 
+    <% for (var c in allMessages[m].comments) { %>
+        <br>
+        <h5><%= allMessages[m].comments[c].comment_content %></h5>
+    <% } %>
+<% } %>
+
+<% if(typeof(errors) != 'undefined' ) { %>
+    <% for (var x in errors) { %>
+     <h3><%= errors[x].title %></h3>
+    <% } %>
+<% } %>
+
+</body>
+</html>
