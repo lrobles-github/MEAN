@@ -1,0 +1,15 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1>Switchboard</h1>
+
+<div *ngFor="let i of board; let idx = index">
+    <button *ngIf="i == 1" (click)="toggle(idx)" [ngClass]="{'clicked': true}" class="myButton">ON</button>
+    <button *ngIf="i == 0" (click)="toggle(idx)" [ngClass]="{'unclicked': true}" class="myButton">OFF</button>    
+</div>
+
+<!-- <p *ngFor="let i of board"> i:{{ i }}, board[i]:{{ board[i] }} </p> -->
