@@ -1,0 +1,111 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1>Registration</h1>
+<div *ngIf="registered" style="border:solid 2px seagreen; padding:6px">
+  <p>Thank you for registering. We have sent a confirmation email to {{ email }} and will send all email to {{ st_address }}, {{ city }}, {{ state }}</p>
+</div>
+
+<form (submit)="onSubmit()">
+  First Name
+  <input 
+  type="text" 
+  name="first_name" 
+  required 
+  minlength="4" 
+  maxlength="24"
+  [(ngModel)]="user.first_name"
+  #first_name='ngModel'
+  />
+  {{ first_name.errors | json }}
+  {{ first_name.valid }}
+
+  <br>
+
+  Last Name
+  <input 
+  type="text" 
+  name="last_name" 
+  required 
+  minlength="4" 
+  maxlength="24"
+  [(ngModel)]="user.last_name"
+  #last_name='ngModel'
+  />
+
+  Email
+  <input 
+  type="text" 
+  name="email" 
+  required
+  pattern="^((.+)@(.+){2,}\.(.+){2,})$"  
+  [(ngModel)]="user.email"
+  #email='ngModel'
+  />
+
+  Password
+  <input 
+  type="password" 
+  name="password" 
+  required 
+  minlength="16" 
+  [(ngModel)]="user.password"
+  #password='ngModel'
+  />
+
+  Password Confirmation
+  <input 
+  type="password" 
+  name="password_confirmation" 
+  required 
+  />  
+  
+  Street Address
+  <input 
+  type="text" 
+  name="last_name" 
+  required 
+  minlength="4" 
+  maxlength="24"
+  [(ngModel)]="user.last_name"
+  #last_name='ngModel'
+  />
+
+  Unit/Apt #
+  <input 
+  type="text" 
+  name="unit" 
+  required
+  [(ngModel)]="user.unit"
+  #unit='ngModel'
+  />
+
+  City
+  <input 
+  type="text" 
+  name="city" 
+  required
+  [(ngModel)]="user.city"
+  #city='ngModel'
+  />
+  
+  State
+  <input 
+  type="text" 
+  name="state" 
+  required
+  [(ngModel)]="user.state"
+  #state='ngModel'
+  />
+  
+  Are you feeling lucky?<br>
+  Yes<input type="radio" name="lucky" id="" value="Yes">
+  No<input type="radio" name="lucky" id="" value="No">
+
+  <input type="submit" value="Register!">
+
+</form>
