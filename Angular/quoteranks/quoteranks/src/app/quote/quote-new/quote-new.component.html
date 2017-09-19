@@ -1,0 +1,41 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="new-quote">
+<h2>Add a quote:</h2>
+
+<form (submit)="onSubmit(formData)" #formData="ngForm">
+
+  Content:
+  <input
+  type="text" 
+  name="quote-content"
+  [(ngModel)]="newQuote.content"
+  #content="ngModel"
+  required
+  minlength="4">
+  <br>
+
+  Author:
+  <input
+  type="text"
+  name='quote-author'
+  [(ngModel)]="newQuote.author"
+  #author="ngModel"
+  required
+  minlength="1">
+  <br>
+
+  <button type='submit'>Add</button>
+  <!-- [disabled]="!formData.valid"> -->
+</form>
+</div>
+
+<!-- <div class='validations'>
+  <span *ngIf="!body.valid" class='invalid quote'>Quote is required.</span>
+  <span *ngIf="!author.valid" class='invalid author'>Author is required.</span>
+</div> -->
