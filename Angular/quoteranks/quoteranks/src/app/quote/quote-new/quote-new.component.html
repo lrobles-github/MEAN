@@ -5,6 +5,7 @@
 <br>
 <br>
 
+
 <div class="new-quote">
 <h2>Add a quote:</h2>
 
@@ -13,7 +14,7 @@
   Content:
   <input
   type="text" 
-  name="quote-content"
+  name="content"
   [(ngModel)]="newQuote.content"
   #content="ngModel"
   required
@@ -23,19 +24,19 @@
   Author:
   <input
   type="text"
-  name='quote-author'
+  name='author'
   [(ngModel)]="newQuote.author"
   #author="ngModel"
   required
   minlength="1">
   <br>
 
-  <button type='submit'>Add</button>
-  <!-- [disabled]="!formData.valid"> -->
+  <button type='submit' [disabled]="!formData.valid">Add</button>
+
 </form>
 </div>
 
-<!-- <div class='validations'>
-  <span *ngIf="!body.valid" class='invalid quote'>Quote is required.</span>
-  <span *ngIf="!author.valid" class='invalid author'>Author is required.</span>
-</div> -->
+<div class='validations'>
+  <span *ngIf="!content.valid" class='invalid'>Please enter a quote.</span><br>
+  <span *ngIf="!author.valid" class='invalid'>Please enter an author.</span>
+</div>

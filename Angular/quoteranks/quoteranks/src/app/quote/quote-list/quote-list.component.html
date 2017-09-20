@@ -1,2 +1,11 @@
-<h2>Quotes:</h2>
-<h3 *ngFor="let q of quotes">{{ q.content | json }} </h3>
+<br>
+<h2>List of Quotes:</h2>
+<div *ngFor="let q of quotes">
+    <br>
+  <h2> {{ q.content | json }} </h2>
+  <p>---- by {{ q.author | json }}</p>
+  <p>Rating: {{ q.rating | json }}</p>
+  <button (click)="voteUp(q)">Vote Up</button>
+  <button (click)="voteDown(q)">Vote Down</button>
+  <button (click)="delete(q)">Delete</button>
+</div>

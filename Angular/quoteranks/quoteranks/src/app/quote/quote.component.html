@@ -1,3 +1,4 @@
-<p>
-  quote works!
-</p>
+<app-quote-new [quotes]="myQuotes" (newQuoteEvent)="newQuote($event)"></app-quote-new>
+<app-quote-list [quotes]="myQuotes" (deleteQuoteEvent)="deleteQuote($event)"></app-quote-list>
+
+

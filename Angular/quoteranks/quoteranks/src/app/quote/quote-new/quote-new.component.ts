@@ -10,7 +10,11 @@ export class QuoteNewComponent implements OnInit {
   @Input() quotes;
   @Output() createQuoteEvent = new EventEmitter();
 
-  newQuote = { body: '', author: '', rating: 0};
+  newQuote = { 
+    content: '', 
+    author: '', 
+    rating: 0
+  };
 
   constructor() { }
 
@@ -21,7 +25,7 @@ export class QuoteNewComponent implements OnInit {
     console.log(formData)
     console.log(this.newQuote);
     this.createQuoteEvent.emit(this.newQuote);
-    this.newQuote = { body: '', author: '', rating: 0};
+    this.newQuote = { content: '', author: '', rating: 0};
   }
   
 }
