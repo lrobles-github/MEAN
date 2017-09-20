@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class QuoteNewComponent implements OnInit {
 
   @Input() quotes;
-  @Output() createQuoteEvent = new EventEmitter();
+  @Output() newQuoteEvent = new EventEmitter();
 
   newQuote = { 
     content: '', 
@@ -24,8 +24,9 @@ export class QuoteNewComponent implements OnInit {
   onSubmit(formData) {
     console.log(formData)
     console.log(this.newQuote);
-    this.createQuoteEvent.emit(this.newQuote);
+    this.newQuoteEvent.emit(this.newQuote);
     this.newQuote = { content: '', author: '', rating: 0};
+    // console.log(this.newQuote.content);
   }
   
 }
