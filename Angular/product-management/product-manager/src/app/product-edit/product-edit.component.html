@@ -1,0 +1,37 @@
+
+<form (submit)="onSubmit(formData)" #formData="ngForm">
+    
+      Title
+      <input 
+      type="text"
+      required
+      minlength="4"
+      [(ngModel)]="editedProduct.title"
+      #title="ngModel"
+      name="title"
+      >
+    
+      <span *ngIf="!title.valid" class='invalid'>Please enter a name that is at least 4 characters long.</span><br>
+      
+      Price
+      <input
+      type="number"
+      required
+      [(ngModel)]="editedProduct.price"
+      #price="ngModel"
+      name="price"
+      
+      >
+      <span *ngIf="!price.valid" class='invalid'>Please enter a price.</span><br>
+      
+      Image URL
+      <input 
+      type="url"
+      [(ngModel)]="editedProduct.image"
+      #image="ngModel"
+      name="name"
+      >
+    
+      <button type="submit" [disabled]="!formData.valid">Edit</button>
+    
+</form>

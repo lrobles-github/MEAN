@@ -26,7 +26,6 @@ export class QuoteNewComponent implements OnInit {
     console.log(this.newQuote);
     this.newQuoteEvent.emit(this.newQuote);
     this.newQuote = { content: '', author: '', rating: 0};
-    // console.log(this.newQuote.content);
   }
   
 }

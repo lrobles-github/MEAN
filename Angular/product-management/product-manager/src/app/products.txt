@@ -1,0 +1,3 @@
+    new Product(1, 'Clean Architecture', 99,'https://images-na.ssl-images-amazon.com/images/I/51J%2BVqSEz1L._SX382_BO1,204,203,200_.jpg'),
+    new Product(2, 'Weapons of Math Destruction', 59, 'https://images-na.ssl-images-amazon.com/images/I/51pxbIv3v9L._SX322_BO1,204,203,200_.jpg'),
+    new Product(3, 'Python Machine Learning', 34, 'https://images-na.ssl-images-amazon.com/images/I/41wDUrTO34L._SX404_BO1,204,203,200_.jpg')

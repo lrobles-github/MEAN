@@ -1,0 +1,7 @@
+#box {
+    border: 1px dotted grey;
+    height: 400px;
+    width: 420px;
+    padding: 24px;
+    margin-top: 24px;
+}
