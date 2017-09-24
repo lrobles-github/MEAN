@@ -4,6 +4,9 @@ var express = require('express');
 // Create an Express App
 var app = express();
 
+// Create the mongoose object
+var mongoose = require('mongoose');
+
 // Require body-parser (to receive post data from clients)
 var bodyParser = require('body-parser');
 
@@ -14,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const path = require('path'); 
 
 // Setting our Static Folder Directory
-app.use(express.static(path.join(__dirname, '/public/dist')));
+app.use(express.static(path.join(__dirname, './../public/bikemarket/dist')));
 
 // // Setting our Views Folder Directory
 // app.set('views', path.join(__dirname, './views'));
@@ -29,35 +32,39 @@ app.use(express.static(path.join(__dirname, '/public/dist')));
 // //   our db in mongodb -- this should match the name of the db you are going to use for your project.
 // mongoose.connect('mongodb://localhost/basic_mongoose');
 
-
-
 // // Create starter schema
-// var UserSchema = new mongoose.Schema({
-//     name: String,
-//     age: Number
-//    })
-//    mongoose.model('User', UserSchema); // We are setting this Schema in our Models as 'User'
-//    var User = mongoose.model('User') // We are retrieving this Schema from our Models, named 'User'
+var BikeSchema = new mongoose.Schema({
+    title: String,
+    description: String,
+    price: Number,
+    location: String
+   })
+   mongoose.model('Bike', BikeSchema); // We are setting this Schema in our Models as 'Bike'
+   var Bike = mongoose.model('Bike') // We are retrieving this Schema from our Models, named 'Bike'
    
-//    mongoose.Promise = global.Promise;
+   mongoose.Promise = global.Promise;
 
 
 // Routes
 // Root Request
 app.get('/test', function(request, response) {
-    response.send("<h1>Node says: Connected!</h1>");
     console.log('server.js ==> worked ')
     return true;
   })
 
-  // Setting our Server to Listen on Port: 4200
-app.listen(4200, function() {
-    console.log("listening on port 4200");
+
+
+//   // require the mongoose configuration file which does the rest for us
+// require('./server/config/mongoose.js');
+
+// // store the function in a variable
+// var routes_setter = require('./server/config/routes.js');
+
+// // invoke the function stored in routes_setter and pass it the "app" variable
+// routes_setter(app)
+
+
+  // Setting our Server to Listen on Port: 1337
+app.listen(1337, function() {
+    console.log("listening on port 1337");
 })
-
-
-// app.set('views', __dirname + '/views');
-
-// app.set('images', __dirname + '/images');
-
-// app.set('view engine', 'ejs');

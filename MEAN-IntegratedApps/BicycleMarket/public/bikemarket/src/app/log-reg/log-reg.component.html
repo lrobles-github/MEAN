@@ -1,0 +1,112 @@
+<div *ngIf="bikeofday" class="bike">
+
+  <h2>Bike Of The Day</h2>
+
+  <img class="bike-img" src="http://road.cc/sites/default/files/cropped/preview_500/images/Wilier%20Twin%20Foil%20TT/Wilier%20Twin%20Foil%20-%20full%20bike.jpg">
+
+  <h2>$6500</h2>
+  <h4>Los Angeles, CA</h4>
+
+  <div class="bike-info">
+    <h3>Willier Racing Bike</h3>
+    <p>Pours a slightly hazed, rich, dark amber beer with orange hues. Massive head on this one, three fingers thick, a white
+      froth with amazing retention; it really sticks to the glass. (Thanks, hop proteins!) The aromatics are unreal, with
+      an aggressive hop scent full of pine, dank resins, spice, grapefruit, rind, pith and a mixed bag of herbal goodies.
+      Beneath it all are sweet, syrupy notes of rich tropical fruit like pineapple, ripe honeydew and mango.</p>
+  </div>
+
+</div>
+
+
+<div id="login">
+
+  <h2>Login</h2>
+    <form (submit)="onLogSubmit()">
+        
+    Email
+    <input 
+    type="text" 
+    name="email" 
+    required
+    pattern="^((.+)@(.+){2,}\.(.+){2,})$"  
+    [(ngModel)]="user.email"
+    #email='ngModel'
+    />
+  
+    Password
+    <input 
+    type="password" 
+    name="password" 
+    required 
+    minlength="16" 
+    [(ngModel)]="user.password"
+    #password='ngModel'
+    />
+
+    <input type="submit" value="Login">
+    
+    </form>
+</div>
+
+
+<div id="registration">
+      <h2>Registration</h2>
+    <form (submit)="onRegSubmit()">
+      First Name
+      <input 
+      type="text" 
+      name="first_name" 
+      required 
+      minlength="4" 
+      maxlength="24"
+      [(ngModel)]="user.first_name"
+      #first_name='ngModel'
+      />
+    
+      <br>
+    
+      Last Name
+      <input 
+      type="text" 
+      name="last_name" 
+      required 
+      minlength="4" 
+      maxlength="24"
+      [(ngModel)]="user.last_name"
+      #last_name='ngModel'
+      />
+    
+      Email
+      <input 
+      type="text" 
+      name="email" 
+      required
+      pattern="^((.+)@(.+){2,}\.(.+){2,})$"  
+      [(ngModel)]="user.email"
+      #email='ngModel'
+      />
+    
+      Password
+      <input 
+      type="password" 
+      name="password" 
+      required 
+      minlength="16" 
+      [(ngModel)]="user.password"
+      #password='ngModel'
+      />
+    
+      Password Confirmation
+      <input 
+      type="password" 
+      name="password_confirmation" 
+      required 
+      /> 
+    
+      <input type="submit" value="Register">
+    
+    </form>
+    
+
+
+</div>
