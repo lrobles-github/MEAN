@@ -12,4 +12,7 @@ export class NewbikeComponent implements OnInit {
   ngOnInit() {
   }
 
+  post() {
+    // posting a bike listing should update the bike-list and clear the form
+  }
 }

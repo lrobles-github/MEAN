@@ -1,0 +1,22 @@
+.bike {
+    border: 1px dotted black;
+    width: 820px;
+    margin: 12px;
+    padding: 12px;
+    background-color: lightgray;
+}
+
+.bike-img {
+    width: 120px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.bike-info {
+    display: inline-block;
+    height: auto;
+    width: 620px;
+    margin: 12px;
+    padding: 12px;
+}

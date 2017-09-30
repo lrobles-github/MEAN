@@ -1,0 +1,16 @@
+#search-form {
+    padding: 24px;
+    margin: 8px;
+    width: 480px;
+    border: 1px solid darkgrey;
+}
+
+#search-box {
+    width: 320px;
+    height: 28px;
+}
+
+#bike-list-wrapper {
+    height: 820px;
+    overflow: scroll;
+}

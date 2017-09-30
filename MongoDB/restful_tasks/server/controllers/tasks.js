@@ -6,30 +6,30 @@
 
 
 var mongoose = require('mongoose');
-var Task = mongoose.model('Task');
+var User = mongoose.model('User');
 
 module.exports = {
 
-  show: function(req, res) {
-    Task.find({}, function(err, tasks) {
-      res.render('tasks', {tasks: tasks});
-    })
-  },
+  // show: function(req, res) {
+  //   Task.find({}, function(err, tasks) {
+  //     res.render('tasks', {tasks: tasks});
+  //   })
+  // },
 
-  retrieve: function(req, res) {
-    Task.findById(id:req.params.id, function(err, task) {
-        res.render('task', {task: task});
-    })
-  },
+  // retrieve: function(req, res) {
+  //   Task.findById(id:req.params.id, function(err, task) {
+  //       res.render('task', {task: task});
+  //   })
+  // },
 
-//   create: function(req, res) {
-//     var task = new Task({name: req.body.name, task: req.body.task});
-//     task.save(function(err) {
-//       if(err){
-//         console.log("something went wrong");
-//       } else {
-//         res.redirect('/tasks');
-//       }
-//     })
-//   }
+  create: function(req, res) {
+    var user = new User({name: req.body.name});
+    user.save(function(err) {
+      if(err){
+        console.log("something went wrong");
+      } else {
+        res.redirect('/');
+      }
+    })
+  }
 }

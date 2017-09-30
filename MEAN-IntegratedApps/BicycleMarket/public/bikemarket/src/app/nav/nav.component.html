@@ -1,5 +1,8 @@
-<div *ngIf="loggedin"id="nav">
-    <h4><a [routerLink]="['dashboard']">Browse</a></h4>
-    <h4><a [routerLink]="['dashboard','bikes']">My Bikes</a></h4>
-    <h4><a [routerLink]="['dashboard', 'logout']">Log Out</a></h4>
+
+<div id="nav">
+    <h4><a [routerLink]="['/dashboard']">Browse</a></h4>
+    <h4><a [routerLink]="['mybikes']">My Bikes</a></h4>
+    <h4><a href="" (click)="logout()">Log Out</a></h4>
 </div>
+
+<router-outlet></router-outlet>

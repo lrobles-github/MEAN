@@ -1,0 +1,13 @@
+
+<form id="search-form" action="" method="get">
+  <input id="search-box" type="search" name="" value="Search for a bike here...">
+  <input type="button" value="Search">
+</form>
+
+<div id="bike-list-wrapper">
+
+  <div id="bike-list" *ngFor="let b of bikes">
+    <app-bikeinfo></app-bikeinfo>
+  </div>
+
+</div>
